@@ -123,7 +123,7 @@ celerybeat.pid
 
 # Environments
 .env
-.venv
+../../../Desktop/parser_Instagram_and_YouTube/.venv
 env/
 venv/
 ENV/
