@@ -1,27 +1,52 @@
-# parser_Instagram_and_YouTube
+# Парсеры для YouTube и Instagram
 
 ## Описание
 
-Этот проект предназначен для парсинга информации о персонажах с веб-страниц, а также для скачивания фотографий и видео из Instagram и YouTube. Проект создаёт отдельные папки для каждого персонажа и сохраняет в них соответствующий контент.
+Эти два скрипта позволяют загружать контент с YouTube и Instagram. Каждый скрипт работает с файлом `urls.txt`, который
+содержит список URL-адресов для обработки. YouTube парсер скачивает видео, а Instagram парсер загружает фотографии.
 
 ## Установка
 
-1. Клонируйте репозиторий:
-    ```bash
-    git clone https://github.com/AlexTkDev/parser_Instagram_and_YouTube.git
-    cd web_parser
-    ```
+1. Убедитесь, что у вас установлен Python 3.7 или выше.
+2. Установите необходимые пакеты с помощью pip:
 
-2. Установите зависимости:
-    ```bash
-    pip install -r requirements.txt
-    ```
+   python -m venv venv
 
-3. Добавьте URL страниц для парсинга в файл `urls.txt`.
+   venv\Scripts\activate (для Windows)
+
+   source venv/bin/activate (для Unix)
+
+
+3. Установите необходимые пакеты из requirements.txt:
+
+   pip install -r requirements.txt
 
 ## Использование
 
-Запустите скрипт:
+Файл urls.txt
+В этот файл добавьте URL-адреса YouTube каналов и Instagram
+профилей, которые вы хотите обработать. Каждый URL должен быть на новой строке. Пример содержимого:
 
-```bash
-python parser.py
+https://www.instagram.com/diachenko.tattoo/
+
+https://www.youtube.com/@user-me5tu9kk1t
+
+## Запуск YouTube парсера
+
+Для запуска скрипта YouTube парсера выполните команду:
+
+    python youtube_parser.py
+
+Скрипт обработает все URL-адреса, содержащие youtube.com или youtu.be, и загрузит видео с указанных каналов.
+
+Запуск Instagram парсера
+Для запуска скрипта Instagram парсера выполните команду:
+
+    python instagram_parser.py
+
+Скрипт обработает все URL-адреса, содержащие instagram.com, и загрузит фотографии с указанных профилей.
+
+## Результаты
+
+Результаты работы скриптов сохраняются в папки, названные по имени канала или профиля.
+В каждой папке создается файл description.txt с описанием и, соответственно, файл photos.txt или загруженные видеофайлы.

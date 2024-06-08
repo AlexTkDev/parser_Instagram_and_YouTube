@@ -3,9 +3,6 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="fe5f2aba-c130-49bd-9c97-51f0dd374cbb" />
-  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
