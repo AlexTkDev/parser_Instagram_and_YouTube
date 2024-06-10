@@ -4,19 +4,19 @@ import yt_dlp
 
 # Функция для проверки и добавления протокола к URL
 def ensure_protocol(url):
-    if not url.startswith(('http://', 'https://')):
-        return 'https://' + url
+    if not url.startswith(("http://", "https://")):
+        return "https://" + url
     return url
 
 
 # Функция для получения имени канала на YouTube
 def get_youtube_channel_name(url):
-    ydl_opts = {'quiet': True}
+    ydl_opts = {"quiet": True}
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         try:
             # Извлекаем информацию о канале, не загружая видео
             info = ydl.extract_info(url, download=False)
-            return info.get('uploader', 'Unknown Channel')
+            return info.get("uploader", "Unknown Channel")
         except Exception as e:
             raise Exception(f"Error processing YouTube URL {url}: {e}")
 
@@ -24,18 +24,20 @@ def get_youtube_channel_name(url):
 # Функция для скачивания видео с YouTube
 def download_youtube_videos(url, count=1):
     ydl_opts = {
-        'quiet': True,
-        'outtmpl': '%(title)s.%(ext)s',  # Шаблон для имен файлов
-        'format': 'best[ext=mp4]',  # Формат видео
-        'noplaylist': True,  # Игнорировать плейлисты
-        'max_downloads': count  # Максимальное количество загружаемых видео
+        "quiet": True,
+        "outtmpl": "%(title)s.%(ext)s",  # Шаблон для имен файлов
+        "format": "best[ext=mp4]",  # Формат видео
+        "noplaylist": True,  # Игнорировать плейлисты
+        "max_downloads": count,  # Максимальное количество загружаемых видео
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         try:
             # Загружаем видео и возвращаем список загруженных файлов
             ydl.download([url])
             info = ydl.extract_info(url, download=False)
-            return [f"{item['title']}.{item['ext']}" for item in info.get('entries', [info])][:count]
+            return [
+                f"{item['title']}.{item['ext']}" for item in info.get("entries", [info])
+            ][:count]
         except Exception as e:
             raise Exception(f"Error downloading videos from {url}: {e}")
 
@@ -57,12 +59,12 @@ def save_content(name, description, youtube_videos):
 
 # Основная функция
 def main():
-    with open('urls.txt', 'r') as file:
+    with open("urls.txt", "r") as file:
         urls = file.readlines()
 
     for url in urls:
         url = url.strip()
-        if not url or ('youtube.com' not in url and 'youtu.be' not in url):
+        if not url or ("youtube.com" not in url and "youtu.be" not in url):
             continue  # Игнорируем неподходящие URL
 
         url = ensure_protocol(url)
@@ -76,5 +78,5 @@ def main():
             print(f"Error processing {url}: {e}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
