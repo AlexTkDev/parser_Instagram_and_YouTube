@@ -9,17 +9,19 @@
 
 1. Убедитесь, что у вас установлен Python 3.7 или выше.
 2. Установите необходимые пакеты с помощью pip:
-
+```bash
    python -m venv venv
 
    venv\Scripts\activate (для Windows)
 
    source venv/bin/activate (для Unix)
+```
 
 
 3. Установите необходимые пакеты из requirements.txt:
-
+```bash
    pip install -r requirements.txt
+```
 
 ## Использование
 
@@ -34,15 +36,17 @@ https://www.youtube.com/@user-me5tu9kk1t
 ## Запуск YouTube парсера
 
 Для запуска скрипта YouTube парсера выполните команду:
-
+```bash
     python youtube_parser.py
+```
 
 Скрипт обработает все URL-адреса, содержащие youtube.com или youtu.be, и загрузит видео с указанных каналов.
 
 Запуск Instagram парсера
 Для запуска скрипта Instagram парсера выполните команду:
-
+```bash
     python instagram_parser.py
+```
 
 Скрипт обработает все URL-адреса, содержащие instagram.com, и загрузит фотографии с указанных профилей.
 
