@@ -36,8 +36,8 @@ def download_youtube_videos(url, count=1):
             ydl.download([url])
             info = ydl.extract_info(url, download=False)
             return [
-                f"{item['title']}.{item['ext']}" for item in info.get("entries", [info])
-            ][:count]
+                       f"{item['title']}.{item['ext']}" for item in info.get("entries", [info])
+                   ][:count]
         except Exception as e:
             raise Exception(f"Error downloading videos from {url}: {e}")
 
