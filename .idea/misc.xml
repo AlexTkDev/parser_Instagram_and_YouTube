@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
-    <option name="enabledOnReformat" value="true" />
-    <option name="pathToExecutable" value="/Library/Frameworks/Python.framework/Versions/3.12/bin/black" />
-    <option name="sdkName" value="Python 3.12" />
+    <option name="sdkName" value="Python 3.12 (parser_Instagram_and_YouTube)" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
