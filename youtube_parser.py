@@ -1,7 +1,7 @@
 import os
 import asyncio
+from concurrent.futures import ThreadPoolExecutor  # Стандартный импорт должен идти раньше
 import yt_dlp
-from concurrent.futures import ThreadPoolExecutor
 
 """Этот модуль содержит функции для загрузки видео с YouTube."""
 
@@ -49,10 +49,9 @@ def download_youtube_videos(url, count=1):
                         ydl.download([video_url])
                         downloaded_videos.append(f"{entry['title']}.mp4")
                 return downloaded_videos
-            else:
-                # Если это одиночное видео
-                ydl.download([url])
-                return [f"{info['title']}.mp4"]
+            # Если это одиночное видео
+            ydl.download([url])
+            return [f"{info['title']}.mp4"]
 
         except yt_dlp.utils.MaxDownloadsReached:
             print(f"Достигнуто максимальное количество загрузок для {url}.")
