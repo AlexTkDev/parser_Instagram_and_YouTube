@@ -8,7 +8,7 @@ photos.
 
 ## Installation
 
-1. Ensure you have Python 3.7 or higher installed.
+1. Ensure you have Python 3.12.0 or higher installed.
 2. Install the required packages using pip:
 
 ```bash
@@ -73,7 +73,7 @@ a `description.txt` file with a description and either a `photos.txt` file or th
 
 ## Установка
 
-1. Убедитесь, что у вас установлен Python 3.7 или выше.
+1. Убедитесь, что у вас установлен Python 3.12.0 или выше.
 2. Установите необходимые пакеты с помощью pip:
 
 ```bash
