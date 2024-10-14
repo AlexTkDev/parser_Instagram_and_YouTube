@@ -1,6 +1,6 @@
 import os
 import asyncio
-from concurrent.futures import ThreadPoolExecutor  # Стандартный импорт должен идти раньше
+from concurrent.futures import ThreadPoolExecutor
 import yt_dlp
 
 """Этот модуль содержит функции для загрузки видео с YouTube."""
